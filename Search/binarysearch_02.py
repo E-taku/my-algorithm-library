@@ -1,6 +1,6 @@
 # bisectでも同じことが可能
 
-class BinarySearch_1:
+class BinarySearch_2:
     def __init__(self, x: int, A: list) -> None:
         self.x = x # 探したい値
         # self.A = sorted(A) # 配列

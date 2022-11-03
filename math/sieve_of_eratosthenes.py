@@ -15,7 +15,7 @@ class Sieve_of_eratosthenes:
         # 素数列挙（リストにまとめる）
         self.prime_list = self.get_prime_enumeration(self.Deleted)
 
-    def get_prime_enumeration(self,deleted: list):
+    def get_prime_enumeration(self,deleted: list) -> list:
         prime_list = []
         # 素数を列挙する
         for i in range(2, self.N+1):
