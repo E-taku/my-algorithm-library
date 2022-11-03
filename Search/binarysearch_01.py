@@ -1,11 +1,11 @@
 class BinarySearch_01:
-    def __init__(self,x: int,A: list):
+    def __init__(self, x: int, A: list) -> None:
         self.x = x # 探したい値
         self.A = sorted(A) # 配列
         self.N = len(A)
         self.idx = self.search()
 
-    def search(self):
+    def search(self) -> None:
         L = 0
         R = self.N - 1
 
