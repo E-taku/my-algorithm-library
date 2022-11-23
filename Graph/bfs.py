@@ -73,5 +73,49 @@ class Bfs:
 
         return maze[gy-1][gx-1]
 
+    # https://atcoder.jp/contests/abc088/tasks/abc088_d
+    # スタート地点からゴールまでの最短経路を求める
+    # ゲームを開始する前に, いくつかの白いマス目の色を黒に変えることができる最大値
+    def grid_Repainting(H: int, W: int, maze: list):
+        """_summary_
+
+        Args:
+            H (int): 縦数
+            W (int): 横数
+            maze (list): _description_
+        """
+        hash_cnt = 0
+        for i in range(H):
+            hash_cnt += maze[i].count('#')
+        dot_cnt = (H*W) - hash_cnt
+        # ←↓↑→
+        directions = [ (0,-1),(1,0),(-1,0),(0,1) ]
+
+        maze[0][0] = 0
+
+        Q = deque()
+        Q.append((0,0))
+
+        while Q:
+            pos = Q.popleft()
+            r = pos[0]
+            w = pos[1]
+
+            for to in directions:
+                next_r = r + to[0]
+                next_w = w + to[1]
+
+                if (next_r < 0 or next_r >= H) or (next_w < 0 or next_w >= W):
+                    continue
+
+                if maze[next_r][next_w] == '.':
+                    maze[next_r][next_w] = maze[r][w] + 1
+                    Q.append((next_r,next_w))
+
+        if maze[H-1][W-1] == '.':
+            return -1
+        return dot_cnt - maze[H-1][W-1]-1
+
+
 
 
