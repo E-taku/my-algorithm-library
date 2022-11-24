@@ -7,7 +7,7 @@ class Unionfind:
         self.par = [-1] * (n + 1) # 最初は親が無いので -1 で初期化
         self.size = [1] * (n + 1) # 最初はグループの頂点数が 1
 
-    # 頂点　x の根を返す関数
+    # 頂点 x の根を返す関数
     def root(self, x: int) -> int:
         # 1個先（親）がなくなる（つまり根に到着するまで）、１個先（親）に進み続ける
         while self.par[x] != -1:

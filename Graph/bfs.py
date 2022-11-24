@@ -9,8 +9,6 @@ for i in range(M):
     G[a].append(b)
     G[b].append(a)
 
-
-
 class Bfs:
 
     # 重みなし無効グラフに対する最短経路問題
@@ -76,7 +74,7 @@ class Bfs:
     # https://atcoder.jp/contests/abc088/tasks/abc088_d
     # スタート地点からゴールまでの最短経路を求める
     # ゲームを開始する前に, いくつかの白いマス目の色を黒に変えることができる最大値
-    def grid_Repainting(H: int, W: int, maze: list):
+    def grid_Repainting(H: int, W: int, maze: list) -> int:
         """_summary_
 
         Args:
